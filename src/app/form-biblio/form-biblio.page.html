@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-back-button color="ligth" class="button-volver" (click)='back()'> </ion-back-button>
+  <ion-toolbar>
+    <ion-title>Formulario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-pading">
+  <div class="form">
+    <ion-item>
+      <ion-label position="stacked">Título publicación</ion-label>
+      <ion-input type="text" [(ngModel)]='referencias.titulopub'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Autores</ion-label>
+      <ion-input type="text" [(ngModel)]='referencias.autores' ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Evento o revista de publicación</ion-label>
+      <ion-input type="text" [(ngModel)]='referencias.eventorevista' ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Tipo de publicación</ion-label>
+      <ion-select [(ngModel)]='referencias.tipopub'>
+        <ion-select-option value=1>Primarias</ion-select-option>
+        <ion-select-option value=2>Secundarias</ion-select-option>
+        <ion-select-option value=3>Terciarias</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Código único de documento</ion-label>
+      <ion-input type="number" [(ngModel)]='referencias.doi'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Año de publicación</ion-label>
+      <ion-input type="number" [(ngModel)]='referencias.anyopub'></ion-input>
+    </ion-item>
+    <ion-button color="secondary" (click)='create()' expand='block' [disabled]="!referencias.titulopub || !referencias.autores || !referencias.tipopub || !referencias.anyopub">Subir</ion-button>
+  </div>
+</ion-content>

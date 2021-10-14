@@ -1,0 +1,17 @@
+<ion-item *ngIf="message" [routerLink]="'/message/' + message.id" [detail]="false">
+  <div slot="start" [class]="!message.read ? 'dot dot-unread' : 'dot'"></div>
+  <ion-label class="ion-text-wrap">
+    <h2>
+      {{ message.titulopub }}
+      <span class="date">
+        <ion-note>Año de publicación: {{ message.anyopub }}</ion-note>
+        <ion-icon name="chevron-forward" size="small" *ngIf="isIos()"></ion-icon>
+      </span>
+    </h2>
+    <h3>Código de documento: {{ message.doi }}</h3>
+  </ion-label>
+</ion-item>
+<ion-item>
+  <ion-button color="danger" (click)="eliminar(message.id)">Eliminar</ion-button>
+  <ion-button color="tertiary" [routerLink]="'/form-update/' + message.id">Actualizar</ion-button>
+</ion-item>

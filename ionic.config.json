@@ -1,0 +1,7 @@
+{
+  "name": "BiblioProject",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="getBackButtonText()"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+  <ion-item>
+    <ion-icon name="person-circle" color="primary"></ion-icon>
+    <ion-label class="ion-text-wrap">
+      <h2>
+        {{ Referencias.titulopub }}
+        <span class="date">
+          <ion-note>Año de publicación: {{ Referencias.anyopub }}</ion-note>
+          <ion-note>Código de documento: {{ Referencias.doi }}</ion-note>
+        </span>
+      </h2>
+    </ion-label>
+  </ion-item>
+  
+  <div class="ion-padding">
+    <h2>Autores: <p>{{ Referencias.autores }}</p></h2>
+  </div>
+  <div class="ion-padding">
+    <h2>Evento o revista de publicación: <p>{{ Referencias.eventorevista }}</p></h2>
+  </div>
+  <div class="ion-padding">
+    <h2>Tipo de publicación: <p>{{ Referencias.tipopub }}</p></h2>
+  </div>
+
+</ion-content>
